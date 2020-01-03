@@ -22,6 +22,7 @@ import 'page/some_button.dart';
 import 'page/stack_and_positioned.dart';
 import 'page/switch_and_checkbox.dart';
 import 'page/test_align.dart';
+import 'page/test_animation/test_basic_version_animation.dart';
 import 'page/test_clip.dart';
 import 'page/test_color_and_theme.dart';
 import 'page/test_container.dart';
@@ -129,6 +130,8 @@ class MyApp extends StatelessWidget {
         "test_event_page": (context) => TestEventPageRoute(),
         "test_event_login": (context) => TestEventLoginRoute(),
         "test_notification_route": (context) => TestNotificationRoute(),
+        "test_basic_version_animation_route": (context) =>
+            TestBasicVersionAnimationRoute(),
       },
       // 打开命名路由时，
       // 如果该路由在注册表中注册了，则打开该路由
@@ -206,6 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "手势识别",
     "事件总线",
     "通知(Notification)",
+    "动画基本结构(基础版本)",
   ];
 
   void _incrementCounter() {
@@ -424,6 +428,9 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 42:
         Navigator.pushNamed(context, "test_notification_route");
+        break;
+      case 43:
+        Navigator.pushNamed(context, "test_basic_version_animation_route");
         break;
     }
   }
