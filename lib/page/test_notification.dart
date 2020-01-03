@@ -14,6 +14,9 @@ import 'package:flutter/material.dart';
 ///
 /// TODO 自定义通知
 /// Notification有一个dispatch(context)方法，它是用于分发通知的
+/// dispatch(context)中调用了当前context的visitAncestorElements方法，
+/// 该方法会从当前Element开始向上遍历父级元素；visitAncestorElements有一个遍历回调参数，
+/// 在遍历过程中对遍历到的父级元素都会执行该回调。遍历的终止条件是：已经遍历到根Element或某个遍历回调返回false
 
 class TestNotificationRoute extends StatelessWidget {
   @override
