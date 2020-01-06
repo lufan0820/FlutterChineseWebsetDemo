@@ -22,7 +22,11 @@ import 'page/some_button.dart';
 import 'page/stack_and_positioned.dart';
 import 'page/switch_and_checkbox.dart';
 import 'page/test_align.dart';
+import 'page/test_animation/test_animated_switcher.dart';
 import 'page/test_animation/test_basic_version_animation.dart';
+import 'page/test_animation/test_hero_animation.dart';
+import 'page/test_animation/test_interweave_animation.dart';
+import 'page/test_animation/test_page_route_animaiton.dart';
 import 'page/test_clip.dart';
 import 'page/test_color_and_theme.dart';
 import 'page/test_container.dart';
@@ -132,6 +136,12 @@ class MyApp extends StatelessWidget {
         "test_notification_route": (context) => TestNotificationRoute(),
         "test_basic_version_animation_route": (context) =>
             TestBasicVersionAnimationRoute(),
+        "test_page_animation_route": (context) => TestPageAnimationRoute(),
+        "test_hero_animation_route": (context) => TestHeroAnimationRoute(),
+        "test_interweave_animation_route": (context) =>
+            TestInterWeaveAnimationRoute(),
+        "test_animated_switcher_route": (context) =>
+            TestAnimatedSwitcherRoute(),
       },
       // 打开命名路由时，
       // 如果该路由在注册表中注册了，则打开该路由
@@ -209,7 +219,11 @@ class _MyHomePageState extends State<MyHomePage> {
     "手势识别",
     "事件总线",
     "通知(Notification)",
-    "动画基本结构(基础版本)",
+    "动画基本结构",
+    "自定义路由过渡动画",
+    "Hero动画",
+    "交织动画",
+    "通用'切换动画'组件(AnimatedSwitcher)",
   ];
 
   void _incrementCounter() {
@@ -431,6 +445,18 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 43:
         Navigator.pushNamed(context, "test_basic_version_animation_route");
+        break;
+      case 44:
+        Navigator.pushNamed(context, "test_page_animation_route");
+        break;
+      case 45:
+        Navigator.pushNamed(context, "test_hero_animation_route");
+        break;
+      case 46:
+        Navigator.pushNamed(context, "test_interweave_animation_route");
+        break;
+      case 47:
+        Navigator.pushNamed(context, "test_animated_switcher_route");
         break;
     }
   }
