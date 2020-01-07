@@ -23,6 +23,7 @@ import 'page/stack_and_positioned.dart';
 import 'page/switch_and_checkbox.dart';
 import 'page/test_align.dart';
 import 'page/test_animation/test_animated_switcher.dart';
+import 'page/test_animation/test_animation_transition_component.dart';
 import 'page/test_animation/test_basic_version_animation.dart';
 import 'page/test_animation/test_hero_animation.dart';
 import 'page/test_animation/test_interweave_animation.dart';
@@ -142,6 +143,8 @@ class MyApp extends StatelessWidget {
             TestInterWeaveAnimationRoute(),
         "test_animated_switcher_route": (context) =>
             TestAnimatedSwitcherRoute(),
+        "test_animation_transition_component_route": (context) =>
+            TestAnimationTransitionComponentRoute(),
       },
       // 打开命名路由时，
       // 如果该路由在注册表中注册了，则打开该路由
@@ -224,6 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "Hero动画",
     "交织动画",
     "通用'切换动画'组件(AnimatedSwitcher)",
+    "自定义过渡动画",
   ];
 
   void _incrementCounter() {
@@ -457,6 +461,10 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 47:
         Navigator.pushNamed(context, "test_animated_switcher_route");
+        break;
+      case 48:
+        Navigator.pushNamed(
+            context, "test_animation_transition_component_route");
         break;
     }
   }
