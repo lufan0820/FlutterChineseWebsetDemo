@@ -8,14 +8,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'page/common_widget.dart';
 import 'page/context_route.dart';
 import 'page/cupertino_test_route.dart';
-import 'page/event/test_event_login.dart';
-import 'page/event/test_event_page.dart';
 import 'page/flex_and_expanded.dart';
 import 'page/image_and_icon.dart';
 import 'page/lifecycle_state.dart';
-import 'page/manage_state/f_manage_s_state.dart';
-import 'page/manage_state/manage_itself_state.dart';
-import 'page/manage_state/mixing_manage_state.dart';
 import 'page/random_words.dart';
 import 'page/route_name_dispatch_param.dart';
 import 'page/some_button.dart';
@@ -32,14 +27,20 @@ import 'page/test_clip.dart';
 import 'page/test_color_and_theme.dart';
 import 'page/test_container.dart';
 import 'page/test_custom_scrollview.dart';
+import 'page/test_customize_widget/test_custom_widget.dart';
 import 'page/test_decoration_box.dart';
 import 'page/test_dialog.dart';
+import 'page/test_event/test_event_login.dart';
+import 'page/test_event/test_event_page.dart';
 import 'page/test_form.dart';
 import 'page/test_futurebuilder_and_streambuilder.dart';
 import 'page/test_gesture.dart';
 import 'page/test_gridview.dart';
 import 'page/test_inherited_widget.dart';
 import 'page/test_listview.dart';
+import 'page/test_manage_state/f_manage_s_state.dart';
+import 'page/test_manage_state/manage_itself_state.dart';
+import 'page/test_manage_state/mixing_manage_state.dart';
 import 'page/test_new_route.dart';
 import 'page/test_new_route_with_param.dart';
 import 'page/test_notification.dart';
@@ -145,6 +146,7 @@ class MyApp extends StatelessWidget {
             TestAnimatedSwitcherRoute(),
         "test_animation_transition_component_route": (context) =>
             TestAnimationTransitionComponentRoute(),
+        "test_custom_widget_route": (context) => TestCustomWidgetRoute(),
       },
       // 打开命名路由时，
       // 如果该路由在注册表中注册了，则打开该路由
@@ -228,6 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "交织动画",
     "通用'切换动画'组件(AnimatedSwitcher)",
     "自定义过渡动画",
+    "自定义组件",
   ];
 
   void _incrementCounter() {
@@ -465,6 +468,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 48:
         Navigator.pushNamed(
             context, "test_animation_transition_component_route");
+        break;
+      case 49:
+        Navigator.pushNamed(context, "test_custom_widget_route");
         break;
     }
   }
