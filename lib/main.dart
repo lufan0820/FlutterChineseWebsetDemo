@@ -27,6 +27,7 @@ import 'page/test_clip.dart';
 import 'page/test_color_and_theme.dart';
 import 'page/test_container.dart';
 import 'page/test_custom_scrollview.dart';
+import 'page/test_customize_widget/test_combination_widget.dart';
 import 'page/test_customize_widget/test_custom_widget.dart';
 import 'page/test_decoration_box.dart';
 import 'page/test_dialog.dart';
@@ -147,6 +148,8 @@ class MyApp extends StatelessWidget {
         "test_animation_transition_component_route": (context) =>
             TestAnimationTransitionComponentRoute(),
         "test_custom_widget_route": (context) => TestCustomWidgetRoute(),
+        "test_combination_widget_route": (context) =>
+            TestCombinationWidgetRoute(),
       },
       // 打开命名路由时，
       // 如果该路由在注册表中注册了，则打开该路由
@@ -231,6 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "通用'切换动画'组件(AnimatedSwitcher)",
     "自定义过渡动画",
     "自定义组件",
+    "组合组件",
   ];
 
   void _incrementCounter() {
@@ -471,6 +475,9 @@ class _MyHomePageState extends State<MyHomePage> {
         break;
       case 49:
         Navigator.pushNamed(context, "test_custom_widget_route");
+        break;
+      case 50:
+        Navigator.pushNamed(context, "test_combination_widget_route");
         break;
     }
   }
